@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.2'
 
 
 gem 'rails', '4.1.5'
@@ -14,6 +14,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 
 gem 'spring',        group: :development
+
+gem 'devise', '~> 3.4.1'
 
 # 
 
