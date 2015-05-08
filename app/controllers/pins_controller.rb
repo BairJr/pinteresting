@@ -23,14 +23,16 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin = current_user.pins.build(pin_params)
+    @pin =  current_user.pins.build(pin_params)
     @pin.save
-    respond_with(@pin)
+    #respond_with(@pin)
+    redirect_to @pin, notice: 'Pin was created'
   end
 
   def update
     @pin.update(pin_params)
-    respond_with(@pin)
+    #respond_with(@pin)
+    redirect_to @pin, notice: 'Pin was successfully updated'
   end
 
   def destroy
@@ -51,6 +53,6 @@ class PinsController < ApplicationController
 
 
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 end
