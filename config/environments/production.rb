@@ -84,5 +84,15 @@ Rails.application.configure do
   #Note to register to actual doman
   config.action_mailer.default_url_options = { host: 'djbair.com', port: 3000 }
 
+#Sets Paperclip to updload imagest to Amazon S3
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
+
   
 end
